@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+:root {
+    --text-color: #DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
+
+
+    --preto: #000000;
+    --roxo-escuro: #160020;
+    --roxo: #240032;
+    --roxo-claro: #330044;
+    --branco: #ffffff;
+}
+
+body {
+    background-image: linear-gradient(#160020, #330044);
+    font-family: Bai Jamjuree;
+}
+
+#container {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 1.5rem;
+}
+
+.cartao {
+    margin: 1rem 1rem;
+    height: 35rem;
+    flex-grow: 1;
+    flex-basis: calc(30% - 6rem);
+}
+
+.cartao__conteudo {
+    background: transparent;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 500ms ease-in-out;
+}
+
+.cartao__conteudo__pergunta {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartao__conteudo__pergunta img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; 
+    border-radius: 0.5rem;
+}
+
+.cartao__conteudo__resposta {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__resposta img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+header {
+    background-color: var(--roxo-escuro);
+    color: var(--branco);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 2.5rem;
+}
+
+footer {
+    background-color: var(--roxo-claro);
+    color: var(--branco);
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 4.5rem;
+}
+
+.Enunciados p, h1 {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+}
